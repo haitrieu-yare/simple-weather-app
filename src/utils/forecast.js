@@ -15,11 +15,15 @@ const forecast = (latitude, longitude, callback) => {
     } else {
       callback(
         undefined,
-        "Current temperate: " +
+        "Weather is " +
+          body.current.weather_descriptions[0] +
+          ". Current temperate: " +
           body.current.temperature +
           ". Feels like: " +
           body.current.feelslike +
-          "."
+          ". The humidity is: " +
+          body.current.humidity +
+          "%."
       );
     }
   });
